@@ -8,7 +8,7 @@ function! s:synblock(lnum, col, synname) abort
   let stacks = s:synnamestack(a:lnum, a:col)
   let nest = s:find_last_index(stacks, a:synname)
   if nest ==# -1
-    return
+    return {}
   endif
   return {
   \   'start': s:find_start(a:lnum, a:col, a:synname, nest),
